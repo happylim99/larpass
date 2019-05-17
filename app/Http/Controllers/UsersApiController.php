@@ -66,7 +66,8 @@ return response()->json(['success'=>$success], $this-> successStatus);
 */
 public function details(Request $request)
 {
-$user = Auth::user();
-return response()->json(['success' => $user], $this-> successStatus);
+    $user = Auth::user();
+    //return response()->json(['success' => $user], $this-> successStatus);
+    return response()->json(['success' => $user], $this-> successStatus);
 }
 }

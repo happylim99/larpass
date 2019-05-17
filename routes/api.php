@@ -36,6 +36,48 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 /*
 Route::group([
+    'prefix' => 'productmaster',
+    'middleware' => [
+        'auth:api'
+        ],
+    ],  function () {
+        Route::apiResource('/products','Api\ProductMastersController');
+        Route::apiResource('/{product}/productreviews', 'Api\ProductReviewsController');
+    });
+*/
+
+Route::group([
+    'prefix' => 'productmaster',
+    ],  function () {
+        Route::apiResource('/products','Api\ProductMastersController');
+        Route::apiResource('/{product}/productreviews', 'Api\ProductReviewsController');
+    }
+);
+
+Route::group([
+    'prefix' => 'shop',
+    ],  function () {
+        Route::apiResource('/shops','Api\ShopsController');
+    }
+);
+
+
+/*
+Route::group([
+            'prefix'     => 'admin',
+            'middleware' => [
+                'auth',
+                'anotherMiddleware',
+                'yetAnotherMiddleware',
+            ],
+        ], function() {
+            
+           Route::get('dashboard', function() {} );
+ });
+ */
+
+/*
+Route::group([
     'prefix' => 'auth'
 ], function () {
     Route::post('login', 'AuthController@login');
